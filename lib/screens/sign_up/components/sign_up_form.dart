@@ -3,6 +3,7 @@ import 'package:shop_app/components/custom_surffix_icon.dart';
 import 'package:shop_app/components/default_button.dart';
 import 'package:shop_app/components/form_error.dart';
 import 'package:shop_app/constans.dart';
+import 'package:shop_app/screens/complete_profile/complete_profile_screen.dart';
 import 'package:shop_app/size_config.dart';
 
 class SignUpForm extends StatefulWidget {
@@ -58,7 +59,9 @@ class _SignUpFormState extends State<SignUpForm> {
           Defaultbutton(
             text: "Continue",
             press: () {
-              if (_formKey.currentState.validate()) {}
+              if (_formKey.currentState.validate()) {
+                Navigator.pushNamed(context, CompleteProfileScreen.routeName);
+              }
             },
           )
         ],
@@ -114,7 +117,7 @@ class _SignUpFormState extends State<SignUpForm> {
       validator: (value) {
         if (value.isEmpty) {
           return "";
-        } else if (password != confirmPassword) {
+        } else if (password != value) {
           addError(error: kMatchPassError);
 
           return "";
