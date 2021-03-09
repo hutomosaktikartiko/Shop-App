@@ -4,6 +4,7 @@ import 'package:shop_app/components/default_button.dart';
 import 'package:shop_app/components/form_error.dart';
 import 'package:shop_app/constans.dart';
 import 'package:shop_app/screens/forgot_password.dart/forgot_password_screen.dart';
+import 'package:shop_app/screens/login_success/login_success_screen.dart';
 import 'package:shop_app/size_config.dart';
 
 class SignInForm extends StatefulWidget {
@@ -62,6 +63,7 @@ class _SignInFormState extends State<SignInForm> {
             press: () {
               if (_formKey.currentState.validate()) {
                 _formKey.currentState.save();
+                Navigator.pushNamed(context, LoginSuccessScreen.routeName);
               }
             },
           )
@@ -91,10 +93,14 @@ class _SignInFormState extends State<SignInForm> {
           setState(() {
             errors.add(kPassNullError);
           });
+
+          return "";
         } else if (value.length < 8 && !errors.contains(kShortPassError)) {
           setState(() {
             errors.add(kShortPassError);
           });
+
+          return "";
         }
         return null;
       },
@@ -130,11 +136,14 @@ class _SignInFormState extends State<SignInForm> {
           setState(() {
             errors.add(kEmailNullError);
           });
+          return "";
         } else if (!emailValidatorRegExp.hasMatch(value) &&
             !errors.contains(kInvalidEmailError)) {
           setState(() {
             errors.add(kInvalidEmailError);
           });
+
+          return "";
         }
         return null;
       },
