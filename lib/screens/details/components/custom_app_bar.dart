@@ -20,7 +20,7 @@ class CustomAppBar extends PreferredSize {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             RoundedIconBtn(
-                iconData: Icons.arrow_back_ios,
+                iconData: Icons.arrow_back,
                 press: () => Navigator.pop(context)),
             Container(
               padding: EdgeInsets.symmetric(horizontal: 14, vertical: 5),
