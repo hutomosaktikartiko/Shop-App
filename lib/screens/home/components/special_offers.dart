@@ -11,7 +11,7 @@ class SpecialOffers extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        SectionTiitle(
+        SectionTitle(
           text: "Special for you",
           press: () {},
         ),

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:shop_app/size_config.dart';
 
-class SectionTiitle extends StatelessWidget {
-  const SectionTiitle({
+class SectionTitle extends StatelessWidget {
+  const SectionTitle({
     Key key,
     @required this.text,
     @required this.press,
